@@ -4,7 +4,10 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     letter-spacing: 3px;
+    padding: 0;
+    margin: 0;
 }
 
 header {
@@ -16,16 +19,29 @@ header {
     padding: 0;
 }
 
-h1{
+h1 {
     font-family: 'Anton', sans-serif;
-    font-size: 6vw;
+    font-size: 8vw;
     width: 100%;
     text-align: center;
-    padding: 2vw; 
+    padding: 2vw 2vw 0 2vw; 
     margin: 0;
-    background-color: #003185;
     color: #fff;
-    letter-spacing: 6;
+    letter-spacing: 7px;
+}
+
+h3{
+    font-family: 'Open Sans', sans-serif;
+    color:white;
+    text-align: center;
+    padding: 0;
+    margin: 0 0 2vh 0;
+}
+
+.top {
+    font-family: 'Anton', sans-serif;
+    background-color: #003185;
+    width: 100%
 }
 
 .banner {
@@ -46,8 +62,23 @@ h1{
     align-items: center;
 }
 
-header img {
+img {
     width: 20vw;
     border: none;
 }
 
+.counters {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counters > div {
+    width: 21vw;
+    text-align: center;
+    border-style: inset;
+    border-color: #739fe9;
+    margin: 0 5vw;
+}
