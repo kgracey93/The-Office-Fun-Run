@@ -8,7 +8,7 @@ class Game {
 
   preloadGame() {
     this.backgroundImage = loadImage('../assets/background.jpg');
-    this.playerImage = loadImage('../assets/michael.gif');
+    this.playerImage = loadImage("../assets/michael.gif");
     this.hurdleImage = loadImage('../assets/hurdle.png');
     this.prizeImage = loadImage('../assets/dundie.png');
   }
@@ -44,7 +44,7 @@ class Game {
       }
     });
     // Prizes
-    if (random(1) < 0.02){
+    if (random(1) < 0.02  ){
       this.prizes.push(new Prize(this.prizeImage));
     }
     this.prizes.forEach(function (prize) {

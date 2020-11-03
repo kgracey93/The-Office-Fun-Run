@@ -9,7 +9,7 @@ class Prize {
     collision(playerInfo) {
       let prizeX = this.x + this.width / 2;
       let prizeY = this.y + this.height / 3;
-      let playerX = playerInfo.x + playerInfo.width / 2;
+      let playerX = playerInfo.x + playerInfo.width / 2.5;
       let playerY = playerInfo.y + playerInfo.height / 2;
   
       if (dist(prizeX, prizeY, playerX, playerY) > 50) {
