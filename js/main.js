@@ -1,11 +1,12 @@
-const game = new Game();
+let game = new Game();
+var gameState = "L1";
 
 function preload() {
   game.preloadGame();
 }
 
 function setup() {
-  var canvas = createCanvas(600, 400);
+  var canvas = createCanvas(1000, 400);
   canvas.parent('sketch-holder');
   game.setupGame();
 }
@@ -20,4 +21,3 @@ function keyPressed() {
         game.player.jump();
     }
 }
-  

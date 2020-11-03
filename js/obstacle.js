@@ -2,9 +2,9 @@ class Obstacle {
   constructor(hurdleImage) {
     this.image = hurdleImage;
     this.x = width;
-    this.y = 210  ;
-    this.width = 124;
-    this.height = 125;
+    this.y = 260;
+    this.width = 149;
+    this.height = 150;
     // console.log(height - this.height); -> 275
     // console.log(this.y); -> NaN
   }
@@ -14,7 +14,7 @@ class Obstacle {
     let playerX = playerInfo.x + playerInfo.width / 3;
     let playerY = playerInfo.y + playerInfo.height / 2;
 
-    if (dist(obstacleX, obstacleY, playerX, playerY) > 40) {
+    if (dist(obstacleX, obstacleY, playerX, playerY) > 80) {
         return false;
       } else {
         return true;
@@ -22,7 +22,7 @@ class Obstacle {
   }
 
   drawObstacle() {
-    this.x -= 3.;
+    this.x -= 3;
     image(this.image, this.x, this.y, this.width, this.height);
     this.collision(game.player);
   }

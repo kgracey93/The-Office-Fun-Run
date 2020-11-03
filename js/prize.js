@@ -19,7 +19,7 @@ class Prize {
         }
     }
   
-    drawPrize() {
+    drawPrize() { 
       this.x -= 3;
       image(this.image, this.x, this.y, this.width, this.height);
       this.collision(game.player);

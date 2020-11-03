@@ -7,7 +7,7 @@ class Game {
   }
 
   preloadGame() {
-    this.backgroundImage = loadImage('../assets/background.jpg');
+    this.backgroundImage = loadImage('../assets/background.png');
     this.playerImage = loadImage("../assets/michael.gif");
     this.hurdleImage = loadImage('../assets/hurdle.png');
     this.prizeImage = loadImage('../assets/dundie.png');
@@ -17,6 +17,7 @@ class Game {
     this.background = new Background(this.backgroundImage);
     this.player = new Player(this.playerImage);
   }
+
 
   drawGame() {
     this.background.drawBackground();
@@ -38,13 +39,14 @@ class Game {
         this.lives -= 1;
         document.querySelector('.lives').innerText = this.lives;
         if (this.lives === 0) {
-          alert('Game Over!');
+          alert('Game Over');
+          browser.tabs.reload();
         }
         return false;
       }
     });
     // Prizes
-    if (random(1) < 0.02  ){
+    if (random(1) < 0.01  ){
       this.prizes.push(new Prize(this.prizeImage));
     }
     this.prizes.forEach(function (prize) {

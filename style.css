@@ -53,6 +53,8 @@ h3{
     font-size: 2vw;
     color:white;
     background-color: #003185;
+    margin: 0;
+    padding 0;
 }
 
 .banner span {
@@ -81,4 +83,9 @@ img {
     border-style: inset;
     border-color: #739fe9;
     margin: 0 5vw;
+}
+
+#sketch-holder {
+    padding: 0;
+    margin: 0;
 }
