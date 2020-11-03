@@ -1,0 +1,53 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    color: #012a84;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 3px;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+h1{
+    font-family: 'Anton', sans-serif;
+    font-size: 6vw;
+    width: 100%;
+    text-align: center;
+    padding: 2vw; 
+    margin: 0;
+    background-color: #003185;
+    color: #fff;
+    letter-spacing: 6;
+}
+
+.banner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 2vw;
+    color:white;
+    background-color: #003185;
+}
+
+.banner span {
+    width: 30vw;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    width: 20vw;
+    border: none;
+}
+
