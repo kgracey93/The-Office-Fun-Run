@@ -17,7 +17,7 @@ class Game {
     this.michael = loadImage('/assets/michael.gif');
     this.hurdleImage = loadImage('/assets/hurdle.png');
     this.ryanPrize = {image: loadImage('/assets/ryanPrize.png'), level: 1};
-    this.pamPrize = {image: loadImage('/assets/ryanPrize.png'), level: 2};
+    this.pamPrize = {image: loadImage('/assets/pamPrize.png'), level: 2};
     this.jimPrize = {image: loadImage('/assets/jimPrize.png'), level: 3};
     this.dwightPrize = {image: loadImage('/assets/dwightPrize.png'), level: 4};
     this.michaelPrize = {image: loadImage('/assets/dundie.png'), level: 5};
