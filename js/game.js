@@ -10,22 +10,37 @@ class Game {
   preloadGame() {
     this.prizes = [];
     this.backgroundImage = loadImage('../../assets/background.png');
-    this.ryan = loadImage('../../assets/ryan.gif')
+    this.ryan = loadImage('../../assets/ryan.gif');
     this.pam = loadImage('../../assets/pam.gif');
-    this.jim = loadImage('../../assets/jim.gif')
-    this.dwight= loadImage ('../../assets/dwight.gif')
+    this.jim = loadImage('../../assets/jim.gif');
+    this.dwight = loadImage('../../assets/dwight.gif');
     this.michael = loadImage('../../assets/michael.gif');
     this.hurdleImage = loadImage('../../assets/hurdle.png');
-    this.ryanPrize = {image: loadImage('../../assets/ryanPrize.png'), level: 1};
-    this.pamPrize = {image: loadImage('../../assets/pamPrize.png'), level: 2};
-    this.jimPrize = {image: loadImage('../../assets/jimPrize.png'), level: 3};
-    this.dwightPrize = {image: loadImage('../../assets/dwightPrize.png'), level: 4};
-    this.michaelPrize = {image: loadImage('../../assets/dundie.png'), level: 5};
+    this.ryanPrize = {
+      image: loadImage('../../assets/ryanPrize.png'),
+      level: 1,
+    };
+    this.pamPrize = { image: loadImage('../../assets/pamPrize.png'), level: 2 };
+    this.jimPrize = { image: loadImage('../../assets/jimPrize.png'), level: 3 };
+    this.dwightPrize = {
+      image: loadImage('../../assets/dwightPrize.png'),
+      level: 4,
+    };
+    this.michaelPrize = {
+      image: loadImage('../../assets/dundie.png'),
+      level: 5,
+    };
   }
 
   setupGame() {
     this.background = new Background(this.backgroundImage);
-    this.player = new Player(this.ryan, this.pam, this.jim, this.dwight, this.michael);  
+    this.player = new Player(
+      this.ryan,
+      this.pam,
+      this.jim,
+      this.dwight,
+      this.michael
+    );
   }
 
   drawGame() {
@@ -61,47 +76,44 @@ class Game {
       this.prizeBehavior(this.ryanPrize);
     }
 
-    if(this.points == 20){
+    if (this.points == 20) {
       this.level = 2;
     }
 
-    if(this.level == 2){
+    if (this.level == 2) {
       this.prizeBehavior(this.pamPrize);
-    } 
+    }
 
-    if(this.points == 40){
+    if (this.points == 40) {
       this.level = 3;
     }
-    if(this.level == 3){
+    if (this.level == 3) {
       this.prizeBehavior(this.jimPrize);
-    } 
+    }
 
-    if(this.points == 60){
+    if (this.points == 60) {
       this.level = 4;
     }
-    if(this.level == 4){
+    if (this.level == 4) {
       this.prizeBehavior(this.dwightPrize);
-    } 
-    
-    if(this.points == 80){
+    }
+
+    if (this.points == 80) {
       this.level = 5;
     }
 
-    if(this.level == 5){
+    if (this.level == 5) {
       this.prizeBehavior(this.michaelPrize);
-    } 
-
+    }
   }
-  prizeBehavior(imageObject){
-    this.prizes = this.prizes.filter((imageObject) =>{
-      if(imageObject.level === game.level)
-      return true;
-    })
+  prizeBehavior(imageObject) {
+    this.prizes = this.prizes.filter((imageObject) => {
+      if (imageObject.level === game.level) return true;
+    });
     if (random(1) < 0.01) {
       this.prizes.push(new Prize(imageObject));
     }
     this.prizes.forEach(function (prize) {
-      
       prize.drawPrize();
     });
     this.prizes = this.prizes.filter((prize) => {
