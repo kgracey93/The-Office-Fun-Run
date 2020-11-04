@@ -1,5 +1,5 @@
-let game = new Game();
 var gameState = "L1";
+let game = new Game();
 
 function preload() {
   game.preloadGame();

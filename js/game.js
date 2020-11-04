@@ -8,14 +8,16 @@ class Game {
 
   preloadGame() {
     this.backgroundImage = loadImage('../assets/background.png');
-    this.playerImage = loadImage("../assets/michael.gif");
+    this.michael = loadImage("../assets/michael.gif");
+    this.pam = loadImage('/assets/pam.gif')
     this.hurdleImage = loadImage('../assets/hurdle.png');
-    this.prizeImage = loadImage('../assets/dundie.png');
+    this.michaelPrize = loadImage('../assets/dundie.png');
+    this.pamPrize = loadImage('/assets/dundie.png')
   }
 
   setupGame() {
     this.background = new Background(this.backgroundImage);
-    this.player = new Player(this.playerImage);
+    this.player = new Player(this.michael);
   }
 
 
@@ -39,15 +41,14 @@ class Game {
         this.lives -= 1;
         document.querySelector('.lives').innerText = this.lives;
         if (this.lives === 0) {
-          alert('Game Over');
-          browser.tabs.reload();
+          this.endGame();
         }
         return false;
       }
     });
     // Prizes
     if (random(1) < 0.01  ){
-      this.prizes.push(new Prize(this.prizeImage));
+      this.prizes.push(new Prize(this.michaelPrize));
     }
     this.prizes.forEach(function (prize) {
       prize.drawPrize();
@@ -58,7 +59,20 @@ class Game {
       } else {
         this.points += 10;
         document.querySelector('.points').innerText = this.points;
+        if (this.points === 20){
+          this.drawPam();
+        }
       }
     });
+  }
+  endGame(){
+    alert('Game Over');
+          setup();
+          this.lives = 5;
+          document.querySelector('.lives').innerText = this.lives;
+          this.points = 0;
+  }
+  drawPam(){
+    this.player = new Player(this.pam);
   }
 }
