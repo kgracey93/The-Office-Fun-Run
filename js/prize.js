@@ -1,6 +1,7 @@
 class Prize {
-    constructor(prizeImage) {
-      this.image = prizeImage;
+    constructor(imageObject) {
+      this.image = imageObject.image;
+      this.level = imageObject.level;
       this.x = width;
       this.y = (Math.random() * height) / 2.5;
       this.width = 50;

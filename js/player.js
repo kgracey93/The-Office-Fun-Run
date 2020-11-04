@@ -1,7 +1,10 @@
 class Player {
-  constructor(player1, player2) {
-    this.p1Image = player1;
-    this.p2Image = player2;
+  constructor(ryan, pam, jim, dwight, michael) {
+    this.ryan = ryan;
+    this.pam = pam;
+    this.jim    = jim;
+    this.dwight = dwight;
+    this.michael = michael;
     this.height = 300;
     this.width = 375;
     this.x = 0;
@@ -11,13 +14,23 @@ class Player {
     this.jumpsCount = 0;
   }
   drawPlayer() {
-    // console.log(this.p2Image);
-
     if (game.level === 1) {
-      image(this.p1Image, this.x, this.y);
+      image(this.ryan, this.x, this.y);
     }
     if (game.level === 2) {
-      image(this.p2Image, this.x, this.y);
+      image(this.pam, this.x, this.y);
+    }
+
+    if (game.level === 3) {
+      image(this.jim, this.x, this.y);
+    }
+
+    if (game.level === 4) {
+      image(this.dwight, this.x, this.y);
+    }
+
+    if (game.level === 5) {
+      image(this.michael, this.x, this.y);
     }
 
     this.velocity += this.gravity;

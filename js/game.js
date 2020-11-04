@@ -1,7 +1,6 @@
 class Game {
   constructor() {
     this.obstacles = [];
-    this.prizes = [];
     this.lives = 5;
     this.points = 0;
     this.gameOver = false;
@@ -9,17 +8,21 @@ class Game {
   }
 
   preloadGame() {
+    this.prizes = [];
     this.backgroundImage = loadImage('../assets/background.png');
-    this.michael = loadImage('../assets/michael.gif');
+    this.ryan = loadImage('/assets/ryan.gif')
     this.pam = loadImage('/assets/pam.gif');
+    this.jim = loadImage('/assets/jim.gif')
+    this.dwight= loadImage ('/assets/dwight.gif')
+    this.michael = loadImage('../assets/michael.gif');
     this.hurdleImage = loadImage('../assets/hurdle.png');
-    this.michaelPrize = loadImage('../assets/dundie.png');
-    this.pamPrize = loadImage('/assets/dundie.jpg');
+    this.michaelPrize = {image: loadImage('../assets/dundie.png'), level: 1};
+    this.pamPrize = {image: loadImage('/assets/dundie.jpg'), level: 2};
   }
 
   setupGame() {
     this.background = new Background(this.backgroundImage);
-    this.player = new Player(this.michael, this.pam);  
+    this.player = new Player(this.ryan, this.pam, this.jim, this.dwight, this.michael);  
   }
 
   drawGame() {
@@ -60,17 +63,42 @@ class Game {
     }
 
     if(this.level == 2){
-      // this.player = new Player(this.pam);
-      this.prizeBehavior(this.pamPrize)
+      this.prizeBehavior(this.pamPrize);
+    } 
+
+    if(this.points == 40){
+      this.level = 3;
+    }
+    if(this.level == 3){
+      this.prizeBehavior(this.michaelPrize);
+    } 
+
+    if(this.points == 60){
+      this.level = 4;
+    }
+    if(this.level == 4){
+      this.prizeBehavior(this.pamPrize);
+    } 
+    
+    if(this.points == 80){
+      this.level = 5;
+    }
+
+    if(this.level == 5){
+      this.prizeBehavior(this.michaelPrize);
     } 
 
   }
-  prizeBehavior(image){
-    
+  prizeBehavior(imageObject){
+    this.prizes = this.prizes.filter((imageObject) =>{
+      if(imageObject.level === game.level)
+      return true;
+    })
     if (random(1) < 0.01) {
-      this.prizes.push(new Prize(image));
+      this.prizes.push(new Prize(imageObject));
     }
     this.prizes.forEach(function (prize) {
+      
       prize.drawPrize();
     });
     this.prizes = this.prizes.filter((prize) => {
