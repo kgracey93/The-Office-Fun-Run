@@ -9,18 +9,18 @@ class Game {
 
   preloadGame() {
     this.prizes = [];
-    this.backgroundImage = loadImage('/assets/background.png');
-    this.ryan = loadImage('/assets/ryan.gif')
-    this.pam = loadImage('/assets/pam.gif');
-    this.jim = loadImage('/assets/jim.gif')
-    this.dwight= loadImage ('/assets/dwight.gif')
-    this.michael = loadImage('/assets/michael.gif');
-    this.hurdleImage = loadImage('/assets/hurdle.png');
-    this.ryanPrize = {image: loadImage('/assets/ryanPrize.png'), level: 1};
-    this.pamPrize = {image: loadImage('/assets/pamPrize.png'), level: 2};
-    this.jimPrize = {image: loadImage('/assets/jimPrize.png'), level: 3};
-    this.dwightPrize = {image: loadImage('/assets/dwightPrize.png'), level: 4};
-    this.michaelPrize = {image: loadImage('/assets/dundie.png'), level: 5};
+    this.backgroundImage = loadImage('../../assets/background.png');
+    this.ryan = loadImage('../../assets/ryan.gif')
+    this.pam = loadImage('../../assets/pam.gif');
+    this.jim = loadImage('../../assets/jim.gif')
+    this.dwight= loadImage ('../../assets/dwight.gif')
+    this.michael = loadImage('../../assets/michael.gif');
+    this.hurdleImage = loadImage('../../assets/hurdle.png');
+    this.ryanPrize = {image: loadImage('../../assets/ryanPrize.png'), level: 1};
+    this.pamPrize = {image: loadImage('../../assets/pamPrize.png'), level: 2};
+    this.jimPrize = {image: loadImage('../../assets/jimPrize.png'), level: 3};
+    this.dwightPrize = {image: loadImage('../../assets/dwightPrize.png'), level: 4};
+    this.michaelPrize = {image: loadImage('../../assets/dundie.png'), level: 5};
   }
 
   setupGame() {
