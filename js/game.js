@@ -16,8 +16,11 @@ class Game {
     this.dwight= loadImage ('/assets/dwight.gif')
     this.michael = loadImage('../assets/michael.gif');
     this.hurdleImage = loadImage('../assets/hurdle.png');
-    this.michaelPrize = {image: loadImage('../assets/dundie.png'), level: 1};
-    this.pamPrize = {image: loadImage('/assets/dundie.jpg'), level: 2};
+    this.ryanPrize = {image: loadImage('/assets/ryanPrize.png'), level: 1};
+    this.pamPrize = {image: loadImage('/assets/pamPrize.png'), level: 2};
+    this.jimPrize = {image: loadImage('/assets/jimPrize.png'), level: 3};
+    this.dwightPrize = {image: loadImage('/assets/dwightPrize.png'), level: 4};
+    this.michaelPrize = {image: loadImage('/assets/dundie.png'), level: 5};
   }
 
   setupGame() {
@@ -55,7 +58,7 @@ class Game {
     // Ideally I add this functionality to the prize then pass the new image as a parameter to update the prize above
     //
     if (this.level == 1) {
-      this.prizeBehavior(this.michaelPrize);
+      this.prizeBehavior(this.ryanPrize);
     }
 
     if(this.points == 20){
@@ -70,14 +73,14 @@ class Game {
       this.level = 3;
     }
     if(this.level == 3){
-      this.prizeBehavior(this.michaelPrize);
+      this.prizeBehavior(this.jimPrize);
     } 
 
     if(this.points == 60){
       this.level = 4;
     }
     if(this.level == 4){
-      this.prizeBehavior(this.pamPrize);
+      this.prizeBehavior(this.dwightPrize);
     } 
     
     if(this.points == 80){
