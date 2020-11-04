@@ -40,7 +40,8 @@ h3{
 
 .top {
     font-family: 'Anton', sans-serif;
-    background-color: #003185;
+    /* background-color: #003185; */
+    background-color: red;
     width: 100%
 }
 
