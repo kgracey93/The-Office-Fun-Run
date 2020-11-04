@@ -2,9 +2,10 @@ class Game {
   constructor() {
     this.obstacles = [];
     this.prizes = [];
-    this.lives = 1;
+    this.lives = 5;
     this.points = 0;
     this.gameOver = false;
+    this.level = 1;
   }
 
   preloadGame() {
@@ -13,12 +14,12 @@ class Game {
     this.pam = loadImage('/assets/pam.gif');
     this.hurdleImage = loadImage('../assets/hurdle.png');
     this.michaelPrize = loadImage('../assets/dundie.png');
-    this.pamPrize = loadImage('/assets/dundie.png');
+    this.pamPrize = loadImage('/assets/dundie.jpg');
   }
 
   setupGame() {
     this.background = new Background(this.backgroundImage);
-    this.player = new Player(this.michael);
+    this.player = new Player(this.michael, this.pam);  
   }
 
   drawGame() {
@@ -48,28 +49,37 @@ class Game {
     });
 
     // Michael Prizes
-    
-      if (random(1) < 0.01) {
-        this.prizes.push(new Prize(this.michaelPrize));
-      }
-      this.prizes.forEach(function (prize) {
-        prize.drawPrize();
-      });
-      this.prizes = this.prizes.filter((prize) => {
-        if (!prize.collision(this.player)) {
-          return true;
-        } else {
-          this.points += 10;
-          document.querySelector('.points').innerText = this.points;
-        }
-        if (this.points === 20) {
-          this.drawPam();
-        }
-      });
+    // Ideally I add this functionality to the prize then pass the new image as a parameter to update the prize above
+    //
+    if (this.level == 1) {
+      this.prizeBehavior(this.michaelPrize);
+    }
+
+    if(this.points == 20){
+      this.level = 2;
+    }
+
+    if(this.level == 2){
+      // this.player = new Player(this.pam);
+      this.prizeBehavior(this.pamPrize)
+    } 
 
   }
-
-  drawPam() {
-    this.player = new Player(this.pam);
+  prizeBehavior(image){
+    
+    if (random(1) < 0.01) {
+      this.prizes.push(new Prize(image));
+    }
+    this.prizes.forEach(function (prize) {
+      prize.drawPrize();
+    });
+    this.prizes = this.prizes.filter((prize) => {
+      if (!prize.collision(this.player)) {
+        return true;
+      } else {
+        this.points += 10;
+        document.querySelector('.points').innerText = this.points;
+      }
+    });
   }
 }
