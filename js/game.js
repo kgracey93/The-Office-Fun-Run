@@ -1,11 +1,12 @@
 class Game {
   constructor() {
     this.obstacles = [];
-    this.lives = 3;
+    this.lives = 5;
     this.points = 0;
     this.gameOver = false;
+    this.gameStart = false;
     this.level = 1;
-    this.endGameNames = ['Ryan', 'Pam', 'Jim', 'Dwight', 'Michael'];
+    this.endGameNames = ['Ryan Howard', 'Pam Beesly', 'Jim Halpert', 'Dwight Schrute', 'Michael Scott'];
     this.endGameReasons = [
       'Falisification of online sales \nand drug use during company events.',
       `Using company time to work on \npersonal illustration projects \nand excessive use of office supplies.`,
@@ -37,11 +38,11 @@ class Game {
     };
     this.michaelPrize = { image: loadImage('./assets/dundie.png'), level: 5 };
     this.obstacleSounds = [
-      loadSound('./assets/boom-roasted.mp3'),
       loadSound('./assets/thats-what-she-said1.mp3'),
+      loadSound('./assets/boom-roasted.mp3'),
       loadSound('./assets/thats-what-she-said2.mp3'),
-      loadSound('./assets/thats-what-she-said3.mp3'),
       loadSound('./assets/what-is-your-problem.mp3'),
+      loadSound('./assets/thats-what-she-said3.mp3'),
     ];
     this.themeSong = loadSound('./assets/The Office.mp3');
     this.slider = createSlider(0, 1, 0.5, 0.01);
@@ -87,7 +88,7 @@ class Game {
       } else {
         this.lives -= 1;
         document.querySelector('.lives').innerText = this.lives;
-        this.obstacleSounds[Math.floor(Math.random() * (this.obstacleSounds.length - 1))].play();
+        this.obstacleSounds[this.lives].play()
         if (this.lives === 0) {
           this.gameOver = true;
         }
@@ -159,7 +160,4 @@ class Game {
       }
     });
   }
-  // endGame() {
-
-  // }
 }
