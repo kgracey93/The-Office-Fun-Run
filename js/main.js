@@ -16,13 +16,18 @@ function draw() {
     fill(00, 31, 130);
 
     textFont('Open Sans');
-    textSize(18);
+    textSize(14);
     text(
       `You have reached the offices of Dunder Mifflin Scranton. Currently the entire staff is out doing the Michael Scott D.M.S.M.P.M.C. Rabies Awareness Pro-Am Fun Run Race.`, 90, 80, 550, 400);
     textAlign(CENTER);
     textFont('Anton');
     textSize(22);
-    text('FOR THE CURE', 360, 230);
+    text('FOR THE CURE', 360, 170);
+    textFont('Open Sans');
+    textSize(18);
+    text(
+      `Avoid the hurdles and collect prizes to earn points! See how high you can get your score!`, 90, 200, 550, 400);
+    textAlign(CENTER);
     rect(80, 260, 550, 60, 10, 10);
     textFont('Anton');
     fill(255, 255, 255);
@@ -85,6 +90,8 @@ function mouseClicked() {
     game.gameStart = true;
     frameRate(60);
     game.lives = 5;
+    game.points = 0;
+    game.level = 1;
     document.querySelector('.lives').innerText = game.lives;
     document.querySelector('.points').innerText = game.points;
   }

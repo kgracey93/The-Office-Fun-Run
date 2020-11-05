@@ -3,7 +3,8 @@ class Prize {
       this.image = imageObject.image;
       this.level = imageObject.level;
       this.x = width;
-      this.y = (Math.random() * height) / 2;
+      this.y = 150
+      this.y = Math.floor(Math.random() * (160 - 80 + 1)) + 80;
       this.width = 50;
       this.height = 50;
     }

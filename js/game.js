@@ -104,6 +104,8 @@ class Game {
     //
     if (this.level == 1) {
       this.prizeBehavior(this.ryanPrize);
+      document.querySelector('#level-status').innerText = this.levelCounter[0].saying;
+      document.querySelector('#level-image').innerHTML = `<div id = 'level-image'> <img class='level-pic' src="./assets/lvl1.png" alt="level1"> </div>`;
     }
 
     if (this.points == 20) {
