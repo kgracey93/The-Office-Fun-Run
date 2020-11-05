@@ -17,7 +17,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding: 0 0 2vw 0;
 }
 
 h1 {
@@ -61,6 +61,7 @@ h3{
 
 .banner span {
     height: 10vw;
+    width: 35vw;
     padding: 1vw;
     display: flex;
     align-items: center;

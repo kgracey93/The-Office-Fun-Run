@@ -68,6 +68,7 @@ class Game {
       this.dwight,
       this.michael
     );
+    this.slider.parent('slider-holder');
   }
 
   drawGame() {
@@ -90,7 +91,7 @@ class Game {
       } else {
         this.lives -= 1;
         document.querySelector('.lives').innerText = this.lives;
-        this.obstacleSounds[this.lives].play()
+        this.obstacleSounds[this.lives].play();
         if (this.lives === 0) {
           this.gameOver = true;
         }
