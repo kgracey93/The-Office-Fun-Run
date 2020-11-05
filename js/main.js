@@ -75,7 +75,12 @@ function mouseClicked() {
     game.gameOver == true
   ) {
     console.log('restart clicked');
-    location.reload();
+    game.gameOver = false;
+    game.gameStart = true;
+    frameRate(60);
+    game.lives = 5;
+    document.querySelector('.lives').innerText = game.lives;
+    document.querySelector('.points').innerText = game.points;
   }
   if (
     mouseX > 80 &&

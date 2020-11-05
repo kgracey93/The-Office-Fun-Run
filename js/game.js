@@ -60,8 +60,6 @@ class Game {
   }
 
   setupGame() {
-    // this.themeSong.play();
-    // this.themeSong.loop();
     this.background = new Background(this.backgroundImage);
     this.player = new Player(
       this.ryan,
