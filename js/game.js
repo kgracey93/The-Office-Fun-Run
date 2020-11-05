@@ -41,16 +41,16 @@ class Game {
       loadSound('./assets/thats-what-she-said1.mp3'),
       loadSound('./assets/thats-what-she-said2.mp3'),
       loadSound('./assets/thats-what-she-said3.mp3'),
-      loadSound('/assets/what-is-your-problem.mp3'),
+      loadSound('./assets/what-is-your-problem.mp3'),
     ];
     this.themeSong = loadSound('./assets/The Office.mp3');
     this.slider = createSlider(0, 1, 0.5, 0.01);
     this.levelCounter = [
-      {img: loadImage('/assets/lvl1.png'), saying: 'Welcome to the office! You are a temp!'},
-      {img: loadImage('/assets/lvl2.png'), saying: 'You have been promoted to receptionist!'},
-      {img: loadImage('/assets/lvl3.png'), saying: 'You have been promoted to salesperson!'},
-      {img: loadImage('/assets/lvl4.png'), saying: 'You are now assistant to the regional manager!'},
-      {img: loadImage('/assets/lvl5.png'), saying: 'You have been promoted to manager!'}
+      {img: loadImage('./assets/lvl1.png'), saying: 'Welcome to the office! You are a temp!'},
+      {img: loadImage('./assets/lvl2.png'), saying: 'You have been promoted to receptionist!'},
+      {img: loadImage('./assets/lvl3.png'), saying: 'You have been promoted to salesperson!'},
+      {img: loadImage('./assets/lvl4.png'), saying: 'You are now assistant to the regional manager!'},
+      {img: loadImage('./assets/lvl5.png'), saying: 'You have been promoted to manager!'}
     ]
   }
 
