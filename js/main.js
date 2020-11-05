@@ -19,7 +19,7 @@ function draw() {
   if (game.gameOver == true) {
     frameRate(0);
     rect(59, 40, 600, 330, 10, 10);
-    fill(00, 31, 85)
+    fill(00, 31, 130)
 
     textFont('Open Sans');
     textSize(24);
@@ -45,5 +45,12 @@ function draw() {
 function keyPressed() {
     if (keyCode === 32) {
         game.player.jump();
+    }
+}
+
+function mouseClicked() {
+    if (mouseX > 80 && mouseX < 630 && mouseY > 260 && mouseY < 320 && game.gameOver === true ) {
+        console.log('restart clicked');
+        location.reload()
     }
 }

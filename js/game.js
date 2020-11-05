@@ -13,6 +13,7 @@ class Game {
       'Lying to your boss about \nhaving a denist appointment.',
       'Distracting your employees, \noffensive comments,\nsleeping with your boss. \nMust we go on?',
     ];
+    this.sound;
   }
 
   preloadGame() {
@@ -32,6 +33,7 @@ class Game {
       level: 4,
     };
     this.michaelPrize = { image: loadImage('./assets/dundie.png'), level: 5 };
+    this.sound = loadSound('./assets/boom-roasted.mp3')
   }
 
   setupGame() {
@@ -64,6 +66,7 @@ class Game {
       } else {
         this.lives -= 1;
         document.querySelector('.lives').innerText = this.lives;
+        this.sound.play();
         if (this.lives === 0) {
           this.gameOver = true;
         }
