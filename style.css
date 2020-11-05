@@ -22,7 +22,7 @@ header {
 
 h1 {
     font-family: 'Anton', sans-serif;
-    font-size: 8vw;
+    font-size: 4vw;
     width: 100%;
     text-align: center;
     padding: 2vw 2vw 0 2vw; 
@@ -33,6 +33,7 @@ h1 {
 
 h3{
     font-family: 'Open Sans', sans-serif;
+    font-size: 1vw;
     color:white;
     text-align: center;
     padding: 0;
@@ -51,7 +52,7 @@ h3{
     align-items: center;
     justify-content: space-around;
     text-align: center;
-    font-size: 2vw;
+    font-size: 1.5vw;
     color:white;
     background-color: #003185;
     margin: 0;
@@ -59,14 +60,14 @@ h3{
 }
 
 .banner span {
-    width: 30vw;
-    padding: 0;
+    height: 10vw;
+    padding: 1vw;
     display: flex;
     align-items: center;
 }
 
 img {
-    width: 20vw;
+    width: 10vw;
     border: none;
 }
 
@@ -92,10 +93,22 @@ img {
 }
 
 #level-status {
-    width: 53vw;
     text-align: center;
+    padding: .5vw;
+    margin: 0 0 2vw 0;
+}
+
+.level-pic{
+    width: 30vw;
+}
+
+.level-display {
+    width: 40vw;
     border-style: inset;
     border-color: #739fe9;
     padding: .5vw;
-    margin: 0 0 4vw 0;
+    margin: 0 0 2vw 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

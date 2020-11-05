@@ -109,6 +109,7 @@ class Game {
     if (this.level == 2) {
       this.prizeBehavior(this.pamPrize);
       document.querySelector('#level-status').innerText = this.levelCounter[1].saying;
+      document.querySelector('#level-image').innerHTML = `<div id = 'level-image'> <img class='level-pic' src="./assets/lvl2.png" alt="level2"> </div>`;
     }
 
     if (this.points == 40) {
@@ -117,6 +118,7 @@ class Game {
     if (this.level == 3) {
       this.prizeBehavior(this.jimPrize);
       document.querySelector('#level-status').innerText = this.levelCounter[2].saying;
+      document.querySelector('#level-image').innerHTML = `<div id = 'level-image'> <img class='level-pic' src="./assets/lvl3.png" alt="level3"> </div>`;
     }
 
     if (this.points == 60) {
@@ -125,6 +127,7 @@ class Game {
     if (this.level == 4) {
       this.prizeBehavior(this.dwightPrize);
       document.querySelector('#level-status').innerText = this.levelCounter[3].saying;
+      document.querySelector('#level-image').innerHTML = `<div id = 'level-image'> <img class='level-pic' src="./assets/lvl4.png" alt="level4"> </div>`;
     }
 
     if (this.points == 80) {
@@ -134,6 +137,7 @@ class Game {
     if (this.level == 5) {
       this.prizeBehavior(this.michaelPrize);
       document.querySelector('#level-status').innerText = this.levelCounter[4].saying;
+      document.querySelector('#level-image').innerHTML = `<div id = 'level-image'> <img class='level-pic' src="./assets/lvl5.png" alt="level5"> </div>`;
     }
   }
   prizeBehavior(imageObject) {
