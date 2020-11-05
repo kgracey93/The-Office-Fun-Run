@@ -13,7 +13,9 @@ class Game {
       'Lying to your boss about \nhaving a denist appointment.',
       'Distracting your employees, \noffensive comments,\nsleeping with your boss. \nMust we go on?',
     ];
-    this.sound;
+    this.obstacleSound;
+    this.themeSong;
+    this.slider;
   }
 
   preloadGame() {
@@ -33,10 +35,19 @@ class Game {
       level: 4,
     };
     this.michaelPrize = { image: loadImage('./assets/dundie.png'), level: 5 };
-    this.sound = loadSound('./assets/boom-roasted.mp3')
+    this.obstacleSounds = [
+      loadSound('./assets/boom-roasted.mp3'),
+      loadSound('./assets/thats-what-she-said1.mp3'),
+      loadSound('./assets/thats-what-she-said2.mp3'),
+      loadSound('./assets/thats-what-she-said3.mp3'),
+      loadSound('/assets/what-is-your-problem.mp3'),
+    ];
+    this.themeSong = loadSound('./assets/The Office.mp3');
+    this.slider = createSlider(0, 1, 0.5, 0.01);
   }
 
   setupGame() {
+    this.themeSong.play();
     this.background = new Background(this.backgroundImage);
     this.player = new Player(
       this.ryan,
@@ -48,6 +59,7 @@ class Game {
   }
 
   drawGame() {
+    this.themeSong.setVolume(this.slider.value());
     this.background.drawBackground();
     this.player.drawPlayer();
 
@@ -66,7 +78,7 @@ class Game {
       } else {
         this.lives -= 1;
         document.querySelector('.lives').innerText = this.lives;
-        this.sound.play();
+        this.obstacleSounds[Math.floor(Math.random() * (this.obstacleSounds.length - 1))].play();
         if (this.lives === 0) {
           this.gameOver = true;
         }
@@ -131,6 +143,6 @@ class Game {
     });
   }
   // endGame() {
-    
+
   // }
 }
