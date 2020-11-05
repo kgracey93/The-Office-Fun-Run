@@ -90,3 +90,12 @@ img {
     padding: 0;
     margin: 0;
 }
+
+#level-status {
+    width: 53vw;
+    text-align: center;
+    border-style: inset;
+    border-color: #739fe9;
+    padding: .5vw;
+    margin: 0 0 4vw 0;
+}

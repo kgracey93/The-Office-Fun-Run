@@ -16,6 +16,7 @@ class Game {
     this.obstacleSound;
     this.themeSong;
     this.slider;
+    this.levelCounter;
   }
 
   preloadGame() {
@@ -44,6 +45,13 @@ class Game {
     ];
     this.themeSong = loadSound('./assets/The Office.mp3');
     this.slider = createSlider(0, 1, 0.5, 0.01);
+    this.levelCounter = [
+      {img: loadImage('/assets/lvl1.png'), saying: 'Welcome to the office! You are a temp!'},
+      {img: loadImage('/assets/lvl2.png'), saying: 'You have been promoted to receptionist!'},
+      {img: loadImage('/assets/lvl3.png'), saying: 'You have been promoted to salesperson!'},
+      {img: loadImage('/assets/lvl4.png'), saying: 'You are now assistant to the regional manager!'},
+      {img: loadImage('/assets/lvl5.png'), saying: 'You have been promoted to manager!'}
+    ]
   }
 
   setupGame() {
@@ -100,6 +108,7 @@ class Game {
 
     if (this.level == 2) {
       this.prizeBehavior(this.pamPrize);
+      document.querySelector('#level-status').innerText = this.levelCounter[1].saying;
     }
 
     if (this.points == 40) {
@@ -107,6 +116,7 @@ class Game {
     }
     if (this.level == 3) {
       this.prizeBehavior(this.jimPrize);
+      document.querySelector('#level-status').innerText = this.levelCounter[2].saying;
     }
 
     if (this.points == 60) {
@@ -114,6 +124,7 @@ class Game {
     }
     if (this.level == 4) {
       this.prizeBehavior(this.dwightPrize);
+      document.querySelector('#level-status').innerText = this.levelCounter[3].saying;
     }
 
     if (this.points == 80) {
@@ -122,6 +133,7 @@ class Game {
 
     if (this.level == 5) {
       this.prizeBehavior(this.michaelPrize);
+      document.querySelector('#level-status').innerText = this.levelCounter[4].saying;
     }
   }
   prizeBehavior(imageObject) {
