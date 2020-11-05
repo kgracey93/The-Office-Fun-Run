@@ -72,7 +72,7 @@ img {
 }
 
 .counters {
-    height: 10vh;
+    height: 8vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -84,7 +84,7 @@ img {
     text-align: center;
     border-style: inset;
     border-color: #739fe9;
-    margin: 0 5vw;
+    margin: 0 3vw;
 }
 
 #sketch-holder {
@@ -95,7 +95,7 @@ img {
 #level-status {
     text-align: center;
     padding: .5vw;
-    margin: 0 0 2vw 0;
+    margin: 0 0 1vw 0;
 }
 
 .level-pic{

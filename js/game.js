@@ -18,6 +18,7 @@ class Game {
     this.themeSong;
     this.slider;
     this.levelCounter;
+    this.hurdleFallen;
   }
 
   preloadGame() {
@@ -52,12 +53,15 @@ class Game {
       {img: loadImage('./assets/lvl3.png'), saying: 'You have been promoted to salesperson!'},
       {img: loadImage('./assets/lvl4.png'), saying: 'You are now assistant to the regional manager!'},
       {img: loadImage('./assets/lvl5.png'), saying: 'You have been promoted to manager!'}
+    ];
+    this.ryanGif = [
+      
     ]
   }
 
   setupGame() {
-    this.themeSong.play();
-    this.themeSong.loop();
+    // this.themeSong.play();
+    // this.themeSong.loop();
     this.background = new Background(this.backgroundImage);
     this.player = new Player(
       this.ryan,

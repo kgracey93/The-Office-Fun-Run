@@ -86,6 +86,7 @@ function mouseClicked() {
   ) {
     console.log('start game clicked');
     game.gameStart = true;
-    console.log(game.gameStart);
+    game.themeSong.play();
+    game.themeSong.loop();
   }
 }
