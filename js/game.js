@@ -108,7 +108,7 @@ class Game {
       document.querySelector('#level-image').innerHTML = `<div id = 'level-image'> <img class='level-pic' src="./assets/lvl1.png" alt="level1"> </div>`;
     }
 
-    if (this.points == 20) {
+    if (this.points == 50) {
       this.level = 2;
     }
 
@@ -118,7 +118,7 @@ class Game {
       document.querySelector('#level-image').innerHTML = `<div id = 'level-image'> <img class='level-pic' src="./assets/lvl2.png" alt="level2"> </div>`;
     }
 
-    if (this.points == 40) {
+    if (this.points == 100) {
       this.level = 3;
     }
     if (this.level == 3) {
@@ -127,7 +127,7 @@ class Game {
       document.querySelector('#level-image').innerHTML = `<div id = 'level-image'> <img class='level-pic' src="./assets/lvl3.png" alt="level3"> </div>`;
     }
 
-    if (this.points == 60) {
+    if (this.points == 150) {
       this.level = 4;
     }
     if (this.level == 4) {
@@ -136,7 +136,7 @@ class Game {
       document.querySelector('#level-image').innerHTML = `<div id = 'level-image'> <img class='level-pic' src="./assets/lvl4.png" alt="level4"> </div>`;
     }
 
-    if (this.points == 80) {
+    if (this.points == 200) {
       this.level = 5;
     }
 
